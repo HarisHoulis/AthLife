@@ -6,7 +6,7 @@ Screenshots
 --
 ![](Screenshots/c1.png) ![](Screenshots/c2.png) ![](Screenshots/c3.png) ![](Screenshots/c4.png)
 
-Tools used
+External services used
 --
 - [Firebase Realtime Database](https://firebase.google.com/docs/database/) (to place rating for different places)
 - [Firebase Authentication](https://firebase.google.com/docs/auth/) (to authenticate users)
@@ -18,7 +18,7 @@ APIs used
 - [OpenWeatherMap API](https://openweathermap.org/api)
 - [Google Places API](https://developers.google.com/places/)
 
-OpenSource Libraries used
+OpenSource libraries used
 -- 
 - [FirebasUI](https://github.com/firebase/FirebaseUI-Android)
 - [Retrofit](https://github.com/square/retrofit)
