@@ -27,3 +27,6 @@ OpenSource libraries used
 - [ExpandableTextView](https://github.com/Manabu-GT/ExpandableTextView)
 - [MaterialRatingBar](https://github.com/DreaminginCodeZH/MaterialRatingBar)
 - [LicensesDialog](http://psdev.de)
+
+---
+Developed as part of the final project of the Udacity Android Developer Nanodegree Program.
