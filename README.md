@@ -29,4 +29,4 @@ OpenSource libraries used
 - [LicensesDialog](http://psdev.de)
 
 ---
-Developed as part of the final project of the Udacity Android Developer Nanodegree Program.
+#### Developed as part of the final project of the Udacity Android Developer Nanodegree Program.
