@@ -18,8 +18,9 @@ APIs used
 - [OpenWeatherMap API](https://openweathermap.org/api)
 - [Google Places API](https://developers.google.com/places/)
 
-OpenSource libraries used
+Libraries used
 -- 
+- [DataBinding](https://developer.android.com/topic/libraries/data-binding/)
 - [FirebasUI](https://github.com/firebase/FirebaseUI-Android)
 - [Retrofit](https://github.com/square/retrofit)
 - [Glide](https://github.com/bumptech/glide)
