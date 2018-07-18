@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="showEvents"
+            type="boolean" />
+
+        <variable
+            name="showError"
+            type="boolean" />
+
+        <variable
+            name="showLoading"
+            type="boolean" />
+
+        <variable
+            name="handler"
+            type="com.example.xoulis.xaris.athLife.ui.fragments.MainFragment" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/main_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@{showEvents ? @drawable/events_background : @drawable/places_background}">
+
+        <TextView
+            android:id="@+id/windowTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/exo_2"
+            android:text="@{showEvents ? @string/happening_now : @string/places_main_title}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/textColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cityNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/exo_2"
+            android:text="@string/city_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="@color/textColor"
+            app:layout_constraintStart_toStartOf="@+id/windowTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/windowTitleTextView" />
+
+        <TextView
+            android:id="@+id/countryNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_2_light"
+            android:text="@string/country_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="@color/textColor"
+            app:layout_constraintStart_toStartOf="@+id/cityNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/cityNameTextView" />
+
+        <com.github.pwittchen.weathericonview.WeatherIconView
+            android:id="@+id/weatherIconView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:visibility="@{showError ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/windowTitleTextView"
+            app:weatherIconColor="@android:color/white"
+            app:weatherIconSize="70" />
+
+        <TextView
+            android:id="@+id/categoryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/exo_2_light"
+            android:text="@{showEvents ? @string/events_category_caption : @string/places_category_caption}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/textColor"
+            android:visibility="@{showLoading || showError ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintStart_toStartOf="@+id/countryNameTextView" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/transparent"
+            android:visibility="@{showLoading ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/countryNameTextView" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{showLoading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/errorViews"
+            layout="@layout/error_views"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:visibility="@{showError ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/categoryTextView"
+            bind:handler="@{handler}" />
+
+        <Spinner
+            android:id="@+id/categoriesSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/events_spinner_background"
+            android:dropDownWidth="match_parent"
+            android:spinnerMode="dialog"
+            android:visibility="@{showError || showLoading ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toTopOf="@+id/categoryTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/categoryTextView"
+            app:layout_constraintTop_toBottomOf="@+id/categoryTextView" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

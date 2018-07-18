@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme Colors -->
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryLight">#FFECB3</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorAccent">#03A9F4</color>
+
+    <color name="eventMonthColor">#FF7043</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="dividerColor">#BDBDBD</color>
+
+    <!-- RetailStoresActivity Theme Colors -->
+    <color name="storesColorPrimary">#0288D1</color>
+    <color name="storesColorPrimaryDark">#03A9F4</color>
+    <color name="storesColorAccent">#FF5722</color>
+
+</resources>

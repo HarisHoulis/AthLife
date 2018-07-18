@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/exo_2</item>
+        <item>@font/exo_2_light</item>
+        <item>@font/exo_2_thin</item>
+        <item>@font/exo_extrabold</item>
+        <item>@font/open_sans_light</item>
+        <item>@font/playfair_display</item>
+        <item>@font/playfair_display_sc</item>
+    </array>
+</resources>

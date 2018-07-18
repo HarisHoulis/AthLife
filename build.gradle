@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.google.gms:google-services:4.0.1'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://jitpack.io' }
+    }
+
+    ext {
+        supportLibraryVersion = "27.1.1"
+        constraintLayoutVersion = "1.1.2"
+        retrofitVersion = "2.4.0"
+        glideVersion = "4.7.1"
+        weatherIconVersion = "1.1.0"
+        expandableTextViewVersion = "0.1.4"
+        ratingBarVersion = "1.3.1"
+        licencesDialogVersion = "1.8.3"
+        firebaseUiVersion = "4.1.0"
+        firebaseAuthVersion = "16.0.2"
+        firebaseDBVersion = "16.0.1"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

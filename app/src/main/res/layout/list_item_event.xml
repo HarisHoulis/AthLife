@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:animateLayoutChanges="true">
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.example.xoulis.xaris.athLife.data.models.Event" />
+
+        <variable
+            name="handler"
+            type="com.example.xoulis.xaris.athLife.ui.adapters.EventsAdapter.EventClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/eventThumbImageView"
+                    android:layout_width="180dp"
+                    android:layout_height="128dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/thumbnail_event_image"
+                    android:onClick="@{(theView) -> handler.onEventClick(theView, event)}"
+                    android:scaleType="fitXY"
+                    app:imgUrl="@{event.imageUrl}"
+                    app:isEvent="@{true}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/default_event_image" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/shareEventImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/share_event_image"
+                    android:focusable="true"
+                    android:onClick="@{() -> handler.onShareEventClick(event.eventUrl)}"
+                    app:backgroundTint="#FAFAFA"
+                    app:elevation="6dp"
+                    app:fabCustomSize="50dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/eventThumbImageView"
+                    app:layout_constraintEnd_toEndOf="@+id/eventThumbImageView"
+                    app:layout_constraintTop_toBottomOf="@+id/eventThumbImageView"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:pressedTranslationZ="6dp"
+                    app:srcCompat="@drawable/ic_share_black_24dp" />
+
+                <TextView
+                    android:id="@+id/eventMonthTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@{event.month}"
+                    android:textAllCaps="true"
+                    android:textColor="@color/eventMonthColor"
+                    app:layout_constraintStart_toStartOf="@+id/eventThumbImageView"
+                    app:layout_constraintTop_toTopOf="@+id/eventTitleTextView"
+                    tools:text="FEB" />
+
+                <TextView
+                    android:id="@+id/eventDayTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{event.day}"
+                    app:layout_constraintEnd_toEndOf="@+id/eventMonthTextView"
+                    app:layout_constraintStart_toStartOf="@+id/eventMonthTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/eventMonthTextView"
+                    tools:text="10" />
+
+                <TextView
+                    android:id="@+id/eventTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@{event.title}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    app:layout_constraintEnd_toEndOf="@+id/eventThumbImageView"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/eventMonthTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/shareEventImageButton"
+                    tools:text="King Gizzard &amp; The Lizard Wizard + Mild High Club" />
+
+                <TextView
+                    android:id="@+id/eventAddressTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    app:eventAddress="@{event.address}"
+                    app:layout_constraintEnd_toEndOf="@+id/shareEventImageButton"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/eventTitleTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/eventTitleTextView"
+                    app:layout_constraintWidth_default="wrap"
+                    tools:text="Patriarchou Ioakeim 1" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>

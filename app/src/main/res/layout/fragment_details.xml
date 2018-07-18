@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fff">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="handler"
+            type="com.example.xoulis.xaris.athLife.ui.fragments.DetailsFragment" />
+
+        <variable
+            name="isMapLoading"
+            type="boolean" />
+
+        <variable
+            name="isEvent"
+            type="boolean" />
+
+        <variable
+            name="event"
+            type="com.example.xoulis.xaris.athLife.data.models.Event" />
+
+        <variable
+            name="place"
+            type="com.example.xoulis.xaris.athLife.data.models.Place" />
+
+        <variable
+            name="rating"
+            type="float"/>
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/detailsAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="4dp">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:title="@{event.title ?? place.name}"
+                app:titleEnabled="true">
+
+                <ImageView
+                    android:id="@+id/content_imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:handler="@{handler}"
+                    app:isEvent="@{isEvent}"
+                    app:layout_collapseMode="parallax"
+                    app:statusBarAndLogo="@{event.imageUrl ?? place.imgUrl}"
+                    android:contentDescription="@string/source_image" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:navigationIcon="@drawable/ic_arrow_back_white_24dp" />
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff">
+
+                <TextView
+                    android:id="@+id/sourceNameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/exo_2"
+                    android:lineSpacingExtra="8dp"
+                    android:text="@{event.title ?? place.name}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="King Gizzard And The Lizard Wizard" />
+
+                <TextView
+                    android:id="@+id/eventPerformersTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/exo_2"
+                    android:text="@{`by ` + event.performers}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textStyle="bold"
+                    android:visibility="@{isEvent ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintStart_toStartOf="@+id/sourceNameTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/sourceNameTextView"
+                    tools:text="by King Gizzard And The Lizard Wizard" />
+
+                <LinearLayout
+                    android:id="@+id/event_date_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="@{isEvent ? View.VISIBLE : View.GONE}"
+                    android:onClick="@{() -> handler.onEventDateLayoutClick(event)}"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/eventPerformersTextView">
+
+                    <ImageView
+                        android:id="@+id/calendarIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:contentDescription="@string/event_icon"
+                        app:srcCompat="@drawable/ic_event_black_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:gravity="start"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/eventDateTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/exo_2"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            app:eventFormattedDate="@{event.calendarDate}"
+                            tools:text="Saturday, February 24" />
+
+                        <TextView
+                            android:id="@+id/eventStartingTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/exo_2_light"
+                            android:text="@{event.time}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            tools:text="12:00 EET" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sourceLocationLL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{() -> handler.onLocationLayoutClick(event.locationPoint ?? place.location, event.title ?? place.name)}"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_date_ll">
+
+                    <ImageView
+                        android:id="@+id/locationIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/event_place_icon"
+                        app:srcCompat="@drawable/ic_place_black_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/addressTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/exo_2"
+                            android:text="@{event.venueName ?? place.address}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            tools:text="President Hotel Athens" />
+
+                        <TextView
+                            android:id="@+id/subAddressTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/exo_2_light"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:visibility="@{isEvent ? View.VISIBLE : View.GONE}"
+                            app:eventAddress="@{event.address}"
+                            tools:text="Leoforos Kiffisias 43" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/placeWebAddressLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:visibility="@{isEvent ? View.GONE : View.VISIBLE}"
+                    app:layout_constraintTop_toBottomOf="@+id/sourceLocationLL">
+
+                    <ImageView
+                        android:id="@+id/placeDetailsWebAddressIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_language_black_24dp"
+                        android:contentDescription="@string/place_web_address_icon" />
+
+                    <TextView
+                        android:id="@+id/placeWebAddressTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/exo_2"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        app:placeWebAddress="@{place}"
+                        tools:text="Test Test Test" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@color/dividerColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/placeWebAddressLL" />
+
+                <LinearLayout
+                    android:id="@+id/aboutEventLL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:orientation="vertical"
+                    android:visibility="@{isEvent ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2">
+
+                    <TextView
+                        android:id="@+id/aboutTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/exo_2"
+                        android:text="@string/about_title"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <com.ms.square.android.expandabletextview.ExpandableTextView xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/expand_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        app:eventDescription="@{event.description}"
+                        expandableTextView:animDuration="200"
+                        expandableTextView:maxCollapsedLines="3">
+
+                        <TextView
+                            android:id="@id/expandable_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/exo_2"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textStyle="italic" />
+
+                        <ImageButton
+                            android:id="@id/expand_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|bottom"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/expand_textView_icon"
+                            android:padding="8dp" />
+                    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ratePlaceLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:orientation="vertical"
+                    android:visibility="@{isEvent ? View.INVISIBLE : View.VISIBLE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2">
+
+                    <TextView
+                        android:id="@+id/rateStoreTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/exo_2"
+                        android:text="@string/your_rating"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                        android:id="@+id/yourRatingBar"
+                        style="@style/Widget.MaterialRatingBar.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:rating="@{rating}"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@color/dividerColor"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ratePlaceLL" />
+
+                <LinearLayout
+                    android:id="@+id/staticMapLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                    <TextView
+                        android:id="@+id/locationTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/exo_2"
+                        android:text="@string/location_title"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <ProgressBar
+                        android:id="@+id/staticMapProgressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:visibility="@{isMapLoading ? View.VISIBLE : View.GONE}"
+                        tools:layout_editor_absoluteX="355dp"
+                        tools:layout_editor_absoluteY="493dp" />
+
+                    <ImageView
+                        android:id="@+id/staticMapImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/default_static_map_image"
+                        android:onClick="@{() -> handler.onLocationLayoutClick(event.locationPoint ?? place.location, event.title ?? place.name)}"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/error_map_image" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

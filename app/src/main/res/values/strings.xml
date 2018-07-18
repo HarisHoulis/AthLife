@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name" translatable="false">AthLife</string>
+
+    <!-- SplashScreen Activity -->
+    <string name="splash_title" translatable="false">Ath<i>LIFE</i></string>
+    <string name="splash_subtitle" translatable="false">where <i><b>LIFE</b></i>  begins…</string>
+    <string name="welcome_message_after_signIn">Welcome, </string>
+
+    <string name="default_event_address">Athens, Attiki</string>
+    <string name="city_name">Athens,</string>
+    <string name="country_name">Greece</string>
+    <string name="about_title">About</string>
+    <string name="location_title">Location</string>
+    <string name="events_label">Events</string>
+    <string name="places_label">Places</string>
+    <!-- Events -->
+    <string name="default_event_description">Description is not available.</string>
+    <string name="happening_now">Happening now in</string>
+    <string name="events_category_caption">Popular Events</string>
+    <!-- Places -->
+    <string name="places_main_title">Best of the best in</string>
+    <string name="places_category_caption">Popular in Athens</string>
+    <string name="your_rating">Your Rating</string>
+
+    <!-- Images' Content Description -->
+    <string name="event_image" translatable="false">Image of event</string>
+    <string name="event_icon" translatable="false">Image for the event icon</string>
+    <string name="event_place_icon" translatable="false">Image for the event\'s place icon</string>
+    <string name="expand_textView_icon" translatable="false">Image for the expandable textView\'s icon</string>
+    <string name="default_static_map_image" translatable="false">Default image for the static map</string>
+    <string name="thumbnail_event_image" translatable="false">Thumbnail image of event</string>
+    <string name="share_event_image" translatable="false">Image for sharing the event</string>
+    <string name="add_to_favorites" translatable="false">Image for adding to favorites the event</string>
+    <string name="source_image" translatable="false">Image accompanying the details of a source</string>
+    <string name="place_web_address_icon" translatable="false">Icon for the web address of a place</string>
+    <string name="nav_header_image" translatable="false">Image for the navigation drawer\'s header</string>
+    <string name="place_image" translatable="false">Thumbnail image for a place in a list</string>
+
+    <!-- Navigation Drawer -->
+    <string name="secondary_menu_title">Other</string>
+    <string name="nav_events">Events</string>
+    <string name="nav_places">Places</string>
+    <string name="nav_logout">Log out</string>
+    <string name="nav_open_source" translatable="false">Open Source</string>
+
+    <!-- Errors -->
+    <string name="no_internet_title">NO internet connection</string>
+    <string name="no_internet_text">Please check your internet connection and try again later!</string>
+    <string name="sign_in_canceled_title">Canceled</string>
+    <string name="sign_in_canceled_text" translatable="false">Sign in was canceled!</string>
+    <string name="unknown_error">Unknown error occurred. Please try again later.</string>
+    <string name="no_results">No Results were found! Please check your internet connection and try again later.</string>
+    <string name="retry_button" translatable="false">RETRY</string>
+
+    <!-- Events Spinner -->
+    <string-array name="events_categories_array">
+        <item>Music</item>
+        <item>Festivals</item>
+        <item>Art</item>
+        <item>Sports</item>
+        <item>Tech</item>
+    </string-array>
+
+    <!-- Places Spinner -->
+    <string-array name="places_categories_array">
+        <item>Restaurant</item>
+        <item>Bar</item>
+        <item>Cafe</item>
+        <item>Movies</item>
+        <item>Club</item>
+    </string-array>
+
+    <!-- Widget -->
+    <string name="appwidget_text" translatable="false">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="category">Category</string>
+    <string name="error" translatable="false">Error</string>
+    <string name="null_user">Please sign in/up and try again.</string>
+    <string name="ok" translatable="false">OK</string>
+
+</resources>

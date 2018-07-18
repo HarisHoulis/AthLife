@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_event_address">Αθήνα, Ατιική</string>
+    <string name="default_event_description">Μη διαθέσιμη περιγραφή.</string>
+    <string name="happening_now">Συμβαίνει τώρα στην</string>
+    <string name="city_name">"Αθήνα, "</string>
+    <string name="country_name">Ελλάδα</string>
+    <string name="events_category_caption">Δημοφιλείς εκδηλώσεις</string>
+    <string name="no_results">Δε βρέθηκαν αποτελέσματα! Προσπαθήστε ξανά αργότερα και ελέγξτε τη σύνδεσή σας.</string>
+    <string name="about_title">Περί</string>
+    <string name="location_title">Τοποθεσία</string>
+    <string name="welcome_message_after_signIn">Καλωσήρθες,</string>
+    <string name="places_main_title">Τα καλύτερα στην</string>
+    <string name="places_category_caption">Δημοφιλή στην Αθήνα</string>
+    <string name="your_rating">Η βαθμολογία σας</string>
+    <string name="secondary_menu_title">Άλλα</string>
+    <string name="nav_events">Εκδηλώσεις</string>
+    <string name="nav_places">Καταστήματα</string>
+    <string name="nav_logout">Έξοδος</string>
+    <string name="no_internet_title">Χωρίς σύνδεση</string>
+    <string name="no_internet_text">Ελέγξτε τη σύνδεσή σας!</string>
+    <string name="sign_in_canceled_title">Ακυρώθηκε</string>
+    <string name="unknown_error">Κάτι πήγε λάθος. Δοκιμάστε ξανά.</string>
+    <string name="category">Κατηγορία</string>
+    <string name="events_label">Εκδηλώσεις</string>
+    <string name="places_label">Μέρη</string>
+    <string name="configure">Διαμορφώστε</string>
+    <string name="add_widget">Προσθήκη widget</string>
+</resources>

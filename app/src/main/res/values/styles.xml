@@ -1,0 +1,47 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- MainActivity theme -->
+    <style name="MainActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
+    </style>
+
+    <!-- EventDetailsActivity theme -->
+    <style name="EventDetailsTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <!-- SplashScreen Activity theme -->
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <!-- RetailStores Activity theme -->
+    <style name="RetailStoresActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/storesColorPrimary</item>
+        <item name="colorPrimaryDark">@color/storesColorPrimaryDark</item>
+        <item name="colorAccent">@color/storesColorAccent</item>
+    </style>
+
+    <!-- StoreDetailsActivity theme -->
+    <style name="StoreDetailsTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <!-- NavigationDrawer theme -->
+    <style name="DrawerTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+
+</resources>
