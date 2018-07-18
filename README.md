@@ -21,13 +21,9 @@ APIs used
 OpenSource Libraries used
 -- 
 - [FirebasUI](https://github.com/firebase/FirebaseUI-Android)
-- [Volley](https://github.com/google/volley)
+- [Retrofit](https://github.com/square/retrofit)
 - [Glide](https://github.com/bumptech/glide)
-- [OpenWeatherMap-Android-Library](https://github.com/KwabenBerko/OpenWeatherMap-Android-Library)
 - [WeatherIconView](https://github.com/pwittchen/WeatherIconView)
 - [ExpandableTextView](https://github.com/Manabu-GT/ExpandableTextView)
 - [MaterialRatingBar](https://github.com/DreaminginCodeZH/MaterialRatingBar)
 - [LicensesDialog](http://psdev.de)
-
-
-#### Created as part of my University's curriculum course, "Software Technology".
