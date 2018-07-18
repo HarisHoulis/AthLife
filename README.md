@@ -13,7 +13,7 @@ Tools used
 
 APIs used
 --
-- [Eventful API](eventful.com/events)
+- [Eventful API](http://api.eventful.com/)
 - [Google Static Maps API](https://developers.google.com/maps/documentation/static-maps/)
 - [OpenWeatherMap API](https://openweathermap.org/api)
 - [Google Places API](https://developers.google.com/places/)
