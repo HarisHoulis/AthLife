@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "887772997802",
+    "firebase_url": "https://athlife-209312.firebaseio.com",
+    "project_id": "athlife-209312",
+    "storage_bucket": "athlife-209312.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887772997802:android:83d712894473432d",
+        "android_client_info": {
+          "package_name": "com.example.xoulis.xaris.athLife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887772997802-g0aa9s4vo22hc6dtp0335pip0riepthq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.xoulis.xaris.athLife",
+            "certificate_hash": "bb6983c89fc528f84abcc494a8a9594b74ba6073"
+          }
+        },
+        {
+          "client_id": "887772997802-j1lsf4r8hn5k3qe1mjhaan8qlr6m9m40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbXlUAXBtoQhXo2mdCdUtb6ch3sVU6CtY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887772997802-j1lsf4r8hn5k3qe1mjhaan8qlr6m9m40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
