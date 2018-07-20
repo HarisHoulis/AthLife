@@ -55,9 +55,6 @@ public class MainFragment extends Fragment implements PlacesAdapter.PlaceClickLi
     private DatabaseReference dbReference;
     private ValueEventListener dbListener;
 
-    public MainFragment() {
-    }
-
     public static MainFragment newInstance(boolean showEventsArg, ArrayList dataSource) {
         MainFragment fragment = new MainFragment();
         Bundle args = new Bundle();
