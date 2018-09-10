@@ -1,14 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'key0'
-            keyPassword 'KF#)IFh)*#)#$32490FAad'
-            storeFile file("$rootDir/keystore.jks")
-            storePassword '38hGG)#G)G'
-        }
-    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.xoulis.xaris.athLife"
@@ -32,7 +24,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
 }
@@ -42,8 +33,9 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.android.support:support-v4:27.1.1'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation "com.android.support.test:runner:1.0.2"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
+
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
     implementation "com.android.support:palette-v7:$supportLibraryVersion"
     implementation "com.android.support:design:$supportLibraryVersion"
@@ -75,5 +67,6 @@ dependencies {
     implementation "com.firebaseui:firebase-ui-auth:$firebaseUiVersion"
     implementation "com.google.firebase:firebase-auth:$firebaseAuthVersion"
     implementation "com.google.firebase:firebase-database:$firebaseDBVersion"
+
 }
 apply plugin: 'com.google.gms.google-services'

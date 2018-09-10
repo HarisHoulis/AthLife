@@ -61,6 +61,9 @@ public class DetailsFragment extends Fragment {
     private DatabaseReference userRef;
     private DatabaseReference placeRef;
 
+    public DetailsFragment() {
+    }
+
     public static DetailsFragment newInstance(boolean isEvent, Parcelable source, String transitionName) {
         DetailsFragment fragment = new DetailsFragment();
         Bundle args = new Bundle();

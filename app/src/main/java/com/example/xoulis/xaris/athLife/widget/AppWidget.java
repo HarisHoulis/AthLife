@@ -22,6 +22,12 @@ import java.util.logging.Handler;
 
 public class AppWidget extends AppWidgetProvider {
 
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        super.onReceive(context, intent);
+
+    }
+
     private static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                         boolean showEvents, String category, int appWidgetId) {
 
