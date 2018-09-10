@@ -1,6 +1,6 @@
 # AthLife
 
-### The best way to get to know Athens, is by emerging in it's life.Find and attend popular events, navigate to interesting places, learn the latest about what's happening in Athens, enjoy your coffee, drink, meal in one of the best places in Athens and even more. This app helps you guide yourself through the mysterious, but beautiful, life of Athens. 
+The best way to get to know Athens, is by emerging in it's life. Find and attend popular events, navigate to interesting places, learn the latest about what's happening in Athens, enjoy your coffee, drink, meal in one of the best places in Athens and even more. This app helps you guide yourself through the mysterious, but beautiful, life of Athens. 
 
 Screenshots
 --
