@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:configure="com.example.xoulis.xaris.athLife.widget.AppWidgetConfigureActivity"
+    android:configure="com.charis.choulis.athLife.widget.AppWidgetConfigureActivity"
     android:initialKeyguardLayout="@layout/app_widget"
     android:initialLayout="@layout/app_widget"
     android:minHeight="180dp"

@@ -10,7 +10,7 @@
 
         <variable
             name="handler"
-            type="com.example.xoulis.xaris.athLife.ui.fragments.DetailsFragment" />
+            type="com.charis.choulis.athLife.ui.fragments.DetailsFragment" />
 
         <variable
             name="isMapLoading"
@@ -22,11 +22,11 @@
 
         <variable
             name="event"
-            type="com.example.xoulis.xaris.athLife.data.models.Event" />
+            type="com.charis.choulis.athLife.data.models.Event" />
 
         <variable
             name="place"
-            type="com.example.xoulis.xaris.athLife.data.models.Place" />
+            type="com.charis.choulis.athLife.data.models.Place" />
 
         <variable
             name="rating"

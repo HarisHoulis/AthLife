@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">AthLife</string>
 
     <!-- SplashScreen Activity -->
@@ -53,7 +53,7 @@
     <string name="retry_button" translatable="false">RETRY</string>
 
     <!-- Events Spinner -->
-    <string-array name="events_categories_array">
+    <string-array name="events_categories_array" tools:ignore="MissingTranslation">
         <item>Music</item>
         <item>Festivals</item>
         <item>Art</item>
@@ -62,7 +62,7 @@
     </string-array>
 
     <!-- Places Spinner -->
-    <string-array name="places_categories_array">
+    <string-array name="places_categories_array" tools:ignore="MissingTranslation">>
         <item>Restaurant</item>
         <item>Bar</item>
         <item>Cafe</item>

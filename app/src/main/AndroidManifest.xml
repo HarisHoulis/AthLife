@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.xoulis.xaris.athLife">
+    package="com.charis.choulis.athLife">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.activities.SplashActivity"
+            android:name="com.charis.choulis.athLife.ui.activities.SplashActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/SplashScreenTheme">
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name="com.charis.choulis.athLife.ui.activities.MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MainActivityTheme" />
@@ -38,14 +38,14 @@
 
         <!-- Widget -->
         <activity
-            android:name=".widget.AppWidgetConfigureActivity"
+            android:name="com.charis.choulis.athLife.widget.AppWidgetConfigureActivity"
             android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
 
-        <receiver android:name=".widget.AppWidget">
+        <receiver android:name="com.charis.choulis.athLife.widget.AppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -56,9 +56,9 @@
         </receiver>
 
         <service
-            android:name=".widget.WidgetRemoteViewsService"
+            android:name="com.charis.choulis.athLife.widget.WidgetRemoteViewsService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
-        <service android:name=".widget.WidgetService" />
+        <service android:name="com.charis.choulis.athLife.widget.WidgetService" />
 
     </application>
 

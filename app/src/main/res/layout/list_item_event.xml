@@ -8,11 +8,11 @@
 
         <variable
             name="event"
-            type="com.example.xoulis.xaris.athLife.data.models.Event" />
+            type="com.charis.choulis.athLife.data.models.Event" />
 
         <variable
             name="handler"
-            type="com.example.xoulis.xaris.athLife.ui.adapters.EventsAdapter.EventClickListener" />
+            type="com.charis.choulis.athLife.ui.adapters.EventsAdapter.EventClickListener" />
     </data>
 
     <LinearLayout

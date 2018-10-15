@@ -21,7 +21,7 @@
 
         <variable
             name="handler"
-            type="com.example.xoulis.xaris.athLife.ui.fragments.MainFragment" />
+            type="com.charis.choulis.athLife.ui.fragments.MainFragment" />
     </data>
 
     <android.support.constraint.ConstraintLayout
